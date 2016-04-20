@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+		xmlns:p="http://www.springframework.org/schema/p"
+		xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"  
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.2.xsd    
+			http://code.alibabatech.com/schema/dubbo
+			http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+		
+	<!-- ### dubbo 服务提供者  ### -->
+	<!-- 
+	dubbo 用户指南 :
+		http://dubbo.io/Home-zh.htm 
+		http://my.oschina.net/candiesyangyang/blog/202320
+	 -->
+				
+				
+	<!-- 提供方应用信息，用于计算依赖关系 -->				
+	<dubbo:application name="zookeeper-dubbo-service"  />
+	<!-- 消息中心地址 -->
+	<!-- zookeeper单点配置：zookeeper://192.168.233.128:2181 ，
+				集群配置： zookeeper://192.168.233.128:2181?backup=192.168.233.129:2181,192.168.233.130:2181-->
+	<dubbo:registry address="zookeeper://192.168.233.128:2181?backup=192.168.233.129:2181,192.168.233.130:2181" check="false" />
+	<!-- 用DUBBO协议在20880端口暴露服务 -->
+	<dubbo:protocol name="dubbo" port="20880" serialization="hessian2" />
+	<!-- 声明接口 -->
+	<dubbo:service  ref="userService"  interface="com.mydemo.zookeeper.service.UserService"/>
+	<dubbo:service  ref="roleService"  interface="com.mydemo.zookeeper.service.RoleService"/>
+	<dubbo:service  ref="singleZkNodeService"  interface="com.mydemo.zookeeper.service.SingleZkNodeService"/>
+	
+</beans>

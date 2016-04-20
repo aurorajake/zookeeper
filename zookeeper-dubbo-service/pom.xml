@@ -1,0 +1,289 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>mydemo.zookeeper</groupId>
+	<artifactId>zookeeper-dubbo-service</artifactId>
+	<packaging>jar</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>zookeeper-dubbo-service Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+  
+	<properties>
+		<spring.version>4.0.6.RELEASE</spring.version>
+	</properties>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>${spring.version}</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-mock</artifactId>
+        <version>2.0.8</version>
+        <scope>test</scope>
+    </dependency>
+      
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-web</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+       <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-aspects</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-webmvc</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-context-support</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-tx</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-jdbc</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+      
+      	<dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>servlet-api</artifactId>
+		  <version>3.0-alpha-1</version>
+		</dependency>
+     
+      <dependency>
+          <groupId>org.freemarker</groupId>
+          <artifactId>freemarker</artifactId>
+          <version>2.3.20</version>
+      </dependency>
+      <dependency>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+          <version>1.2</version>
+      </dependency>
+      <dependency>
+          <groupId>commons-lang</groupId>
+          <artifactId>commons-lang</artifactId>
+          <version>2.6</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+          <version>1.2.14</version>
+      </dependency>
+      
+      <dependency>
+		  <groupId>org.slf4j</groupId>
+		  <artifactId>slf4j-api</artifactId>
+		  <version>1.7.7</version>
+		</dependency>
+      <!-- mybatis核心包 -->
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis</artifactId>
+          <version>3.2.7</version>
+      </dependency>
+      <!-- mybatis/spring包 -->
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis-spring</artifactId>
+          <version>1.2.2</version>
+      </dependency>
+      
+      <!-- mysql驱动包 -->
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>5.1.32</version>
+      </dependency>
+      
+      	<dependency>
+			<groupId>com.github.sgroschupf</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>0.1</version>
+		</dependency>
+		
+      <!-- 阿里巴巴dubbo -->
+      <dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.5.3</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+      
+      <!-- 阿里巴巴数据源包 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+ 
+        <!-- json数据 -->
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+      
+      <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-collections4</artifactId>
+          <version>4.0</version>
+      </dependency>
+      <dependency>
+          <groupId>commons-dbcp</groupId>
+          <artifactId>commons-dbcp</artifactId>
+          <version>1.4</version>
+      </dependency>
+      <dependency>
+          <groupId>commons-pool</groupId>
+          <artifactId>commons-pool</artifactId>
+          <version>1.6</version>
+      </dependency>
+      
+      <!-- zookeeper客户端编程工具包 -->
+	<!-- 
+	<dependency>
+		<groupId>org.apache.curator</groupId>
+		<artifactId>curator-framework</artifactId>
+		<version>2.8.0</version>
+	</dependency>
+	<dependency>
+	  <groupId>org.apache.curator</groupId>
+	  <artifactId>curator-framework</artifactId>
+	  <version>2.8.0</version>
+	  <classifier>sources</classifier>
+	  </dependency>
+	   -->
+	  
+  	<dependency>
+	  <groupId>com.netflix.curator</groupId>
+	  <artifactId>curator-framework</artifactId>
+	  <version>1.1.10</version>
+	</dependency>
+	<dependency>
+	  <groupId>com.netflix.curator</groupId>
+	  <artifactId>curator-framework</artifactId>
+	  <version>1.1.10</version>
+	  <classifier>sources</classifier>
+	</dependency>
+
+	</dependencies>
+  
+  
+  <build>
+    <finalName>zookeeper-dubbo-service</finalName>
+    <plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<encoding>utf-8</encoding>
+				<source>1.6</source>
+				<target>1.6</target>
+			</configuration>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<configuration>
+				<skip>true</skip>
+			</configuration>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-deploy-plugin</artifactId>
+			<version>2.7</version>
+		</plugin>
+		
+		<!-- jetty插件 -->  
+	     <plugin>  
+	         <groupId>org.mortbay.jetty</groupId>  
+	         <artifactId>maven-jetty-plugin</artifactId>  
+	         <version>6.1.26</version>  
+	         <configuration>
+	          	<!-- 配置扫描时间 -->  
+	             <scanIntervalSeconds>3</scanIntervalSeconds>
+	             <!-- web应用的配置 -->
+	         	<contextPath>/</contextPath>
+	         	<!-- 如果只是象上面的配置，jetty会锁定WEB项目下的文件，不让人更改。这给开发带来很大麻烦，因为我们在测试时，发现问题希望马上能够更改，然后刷新页面生效。
+	         		添加这行: -->
+	          	<webDefaultXml>src/main/resources/jetty/webdefault.xml</webDefaultXml> 
+	             <webAppSourceDirectory>src/main/webapp</webAppSourceDirectory>
+	             <reload>automatic</reload>
+	         	
+	         	<!-- 容器的配置 -->
+	            	<connectors>  
+	                	<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">  
+	                    <port>8081</port>  
+	                </connector> 
+	             </connectors>
+	         	
+	             <systemProperties>  
+	           <systemProperty>  
+	           	<name>org.mortbay.util.URI.charset</name>  
+	           	<value>GBK</value>  
+	       	</systemProperty>
+	       </systemProperties>
+	         </configuration>
+	     </plugin>
+	</plugins>
+  </build>
+  
+  
+  <!--distributionManagement: 用于配置分发管理，配置相应的产品发布信息,主要用于发布，在执行mvn deploy后表示要发布的位置 -->
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>nexus-releases</name>
+			<url>http://10.8.12.100/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<url>http://10.8.12.100:8080/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
+	<repositories>
+		<repository>
+			<id>local</id>
+			<url>http://10.8.12.100:8080/nexus/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>releases</id>
+			<name>nexus-releases</name>
+			<url>http://10.8.12.100/nexus/content/repositories/releases/</url>
+		</repository>
+		<repository>
+			<id>releases-scm</id>
+			<name>nexus-releases-scm</name>
+			<url>http://10.8.12.100:8080/nexus/content/repositories/releases/</url>
+		</repository>
+	</repositories>
+  
+</project>
